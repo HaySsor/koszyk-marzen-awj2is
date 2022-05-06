@@ -4,10 +4,10 @@ import './style.css';
 const items =document.querySelectorAll("[data-item]")
 const prises = document.querySelectorAll("[data-price]")
 const itemsValue = document.querySelectorAll("[data-item]")
-const deletes = document.querySelectorAll('.btn')
+const deletesBtn = document.querySelectorAll('.btn')
 let sum = document.querySelector('[data-sum]')
 
-deletes.forEach((btn,i) =>{
+deletesBtn.forEach((btn,i) =>{
   btn.addEventListener('click',(e)=>{
     prises[i].innerHTML = '0 zł';
     btn.parentElement.parentElement.remove()
