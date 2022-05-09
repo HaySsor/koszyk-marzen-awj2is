@@ -19,26 +19,33 @@ deletesBtn.forEach((btn,i) =>{
 function getSum(){
   let prise =0
 items.forEach((item,index)=>{
- 
+  let quantity = parseFloat(item.value)
+
   if(!/\d/.test(parseFloat(item.value))){
     return sum.textContent = 'Podaj liczbe'
   }
-  if(parseFloat(item.value)<0){
-    return sum.textContent = '0zł'
+  if(quantity < 0 ){
+    quantity = 0
+  return quantity
   }
-
-  prise += parseFloat(item.value) * parseFloat(prises[index].textContent)
-
-
-  if (parseFloat(item.value) === 0){
+  
+  prise += quantity * parseFloat(prises[index].textContent)
+  
+  if (quantity === 0){
     item.parentElement.parentElement.parentElement.remove()
   } 
-  sum.textContent = ` ${prise}zł`
+  sum.textContent = ` ${prise}zł` 
 })
 }
 
 itemsValue.forEach(item=>{
-  item.addEventListener('change',()=>{
+  item.addEventListener('click',()=>{
+    getSum()
+    emptyCart()
+  })  
+})
+itemsValue.forEach(item=>{
+  item.addEventListener('keyup',()=>{
     getSum()
     emptyCart()
   })
