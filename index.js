@@ -22,7 +22,7 @@ items.forEach((item,index)=>{
   let quantity = parseFloat(item.value)
 
   if(!/\d/.test(parseFloat(item.value))){
-    return sum.textContent = 'Podaj liczbe'
+    return sum.textContent = 'Coś jest nie tak, sprawdź czy wszysto jest okey'
   }
   if(quantity < 0 ){
     quantity = 0
