@@ -20,3 +20,5 @@ Spraw aby:
 ### Punkty bonusowe
 
 - wyświetl użytkownikowi informację, gdy koszyk będzie pusty.
+
+live https://stackblitz.com/edit/koszyk-marzen-awj2is?file=index.js
